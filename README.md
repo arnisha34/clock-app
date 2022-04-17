@@ -1,6 +1,6 @@
 <h1>Clock App</h1>
 
-<img width="800" alt="Screen Shot 2022-04-17 at 12 56 45 AM" src="https://user-images.githubusercontent.com/970143/163705884-70ddc58b-dd2b-45ab-b59c-8ba7c4e36168.png">
+<img width="1960" alt="Screen Shot 2022-04-17 at 12 56 45 AM" src="https://user-images.githubusercontent.com/970143/163705884-70ddc58b-dd2b-45ab-b59c-8ba7c4e36168.png">
 
 # Getting Started with Create React App
 
