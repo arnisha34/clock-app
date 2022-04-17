@@ -1,0 +1,153 @@
+#root{
+  color: #fff;
+}
+
+.clock-container{
+  position: relative;
+}
+
+.clock-container.day{
+  background: url(../public/images/day.jpg) no-repeat;
+  background-position: left top;
+  background-size: cover;
+}
+
+.clock-container.noon{
+  background: url(../public/images/noon.jpg) no-repeat;
+  background-position: left top;
+  background-size: cover;
+}
+
+.clock-container.night{
+  background: url(../public/images/night.jpg) no-repeat;
+  background-position: left top;
+  background-size: cover;
+}
+
+  .overlay{
+    background-color: rgba(0,0,0,0.4);
+    height: 100vh;
+  }
+
+  .container{
+    height: inherit;
+  }
+
+  .top-half-container.split{
+    height: 50vh;
+  }
+
+    .quote-container.split{
+      display: none;
+    }
+
+
+    .refresh-icon:hover{
+      cursor: pointer;
+    }
+
+    .time-info .local-time{
+      font-size: 12.5rem;
+      line-height: 6.25rem;
+      margin-top: 60px;
+    }
+
+    .greeting,
+    .state{
+      letter-spacing: 5px;
+    }
+
+    .toggle-more button{
+      border: none;
+      border-radius: 50px;
+      background-color: #fff;
+      letter-spacing: 2px;
+      width: 125px;
+    }
+
+    .toggle-more button.less svg{
+      transform: rotate(180deg);
+    }
+
+  .timezone-container{
+    height: 50vh;
+  }
+
+  .timezone-container.hide{
+    display: none;
+  }
+
+  .timezone-container.day,
+  .timezone-container.noon{
+    backdrop-filter: blur(5px);
+    background-color: rgba(255,255,255,0.8);
+    color: #000;
+  }
+
+  .timezone-container.night{
+    background-color: rgba(0,0,0,1);
+  }
+
+  .left-side{
+    border-right: 1px solid #c0c0c0;
+  }
+
+  .timezone-container.night .left-side{
+    border-right: 1px solid #fff;
+  }
+
+  .title{
+    letter-spacing: 3px;
+  }
+
+  .title ~ p{
+    font-size: 2.75rem;
+  }
+
+@media screen and (max-width: 992px) {
+
+  .time-info .local-time{
+    font-size: 8.5rem;
+    margin-top: 20px;
+  }
+
+  .title ~ p{
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px){
+
+  .greeting{
+    font-size: 1rem;
+  }
+
+  .state{
+    font-size: 1.25rem;
+  }
+
+  .timezone-container .left-side{
+    border-right: none;
+  }
+
+  .title ~ p{
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  .greeting{
+    font-size: 0.75rem;
+  }
+
+  .state{
+    font-size:1rem;
+  }
+
+  .time-info .local-time{
+    font-size: 4.5rem;
+    margin-top: 0;
+  }
+
+}
