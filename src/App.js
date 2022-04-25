@@ -26,7 +26,7 @@ function App() {
     .then(res => res.json())
     .then(data => setQuote(data))
 
-    fetch('https://freegeoip.app/json/')
+    fetch('http://ip-api.com/json/')
     .then(res => res.json())
     .then(data => setInterval(setGeoIP(data), 1000))
 
@@ -66,7 +66,7 @@ function App() {
                 <div className={`col-lg-10 col-md-12 align-self-end`}>
                   <h5 className="greeting mb-0 text-uppercase">{hour < 12 ? <span><HiSun size={30}/> Good Morning</span> : hour < 18 ? <span><WiSunset size={30}/> Good Afternoon</span> : <span><RiMoonFill size={25}/> Good Evening</span>}, It's currently</h5>
                   <p className="local-time fw-bold">{time} <span className="timezone fs-1 fw-light">{dateFormat("Z")}</span></p>
-                  <h4 className="state fw-bold text-uppercase">In {geoIP.region_name}, {geoIP.country_code}</h4>
+                  <h4 className="state fw-bold text-uppercase">In {geoIP.regionName}, {geoIP.countryCode}</h4>
                 </div>
                 <div className={`toggle-more col-lg-2 col-md-12 align-self-end pt-lg-0 pt-4`}>
                   <button className={`btn ${buttonText === false ? "more" : "less"} fw-bold text-uppercase`} type="button" onClick={toggleText}>{buttonText === false ? "more" : "less"} <IoChevronDownCircle size={40}/></button>
