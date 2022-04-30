@@ -17,25 +17,28 @@ function App() {
   const [buttonText, setButtonText] = useState(false)
 
   useEffect(() => {
+      fetch("https://worldtimeapi.org/api/ip")
+      .then(res => res.json())
+      .then(data => setTimezone(data))
+      .catch(err => console.log(err))
 
-    fetch("http://worldtimeapi.org/api/ip")
-    .then(res => res.json())
-    .then(data => setTimezone(data))
+      fetch("https://api.quotable.io/random")
+      .then(res => res.json())
+      .then(data => setQuote(data))
+      .catch(err => console.log(err))
 
-    fetch("https://api.quotable.io/random")
-    .then(res => res.json())
-    .then(data => setQuote(data))
-
-    fetch('http://ip-api.com/json/')
-    .then(res => res.json())
-    .then(data => setInterval(setGeoIP(data), 1000))
-
+      fetch(`https://api.ipinfodb.com/v3/ip-city/?key=9ce9eb7e88dd996d551744cf7ca5d9bf7d60bd9e1a6e257297fb13c141ea3192&format=json`)
+      .then(res => res.json())
+      .then(data => setInterval(setGeoIP(data), 1000))
+      .catch(err => console.log(err))
+    
     const interval = setInterval(() => {
       setTime(dateFormat("H:MM"))
     }, 1000);
     return () => clearInterval(interval);
     
   },[newQuote])
+
   
   const changeQuote = () => {
     setNewQuote(quote.content)
